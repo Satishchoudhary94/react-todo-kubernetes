@@ -3,6 +3,7 @@
 ### 1. Create a Deployment YAML
 A Deployment manages your app’s pods and ensures the desired number are running. Here’s a sample for a React app:
 
+
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -19,10 +20,10 @@ spec:
 				app: todo-react-app
 		spec:
 			containers:
-			- name: todo-react-app
-				image: <your-dockerhub-username>/todo-react-app:latest
-				ports:
-				- containerPort: 80
+				- name: todo-react-app
+					image: <your-dockerhub-username>/todo-react-app:latest
+					ports:
+						- containerPort: 80
 ```
 
 **Explanation:**
@@ -34,6 +35,7 @@ spec:
 
 ### 2. Create a Service YAML
 A Service exposes your pods to the network. For local access, use NodePort:
+
 
 ```yaml
 apiVersion: v1
